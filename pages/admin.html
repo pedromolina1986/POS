@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/logos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="/components/header.js" type="text/javascript" defer></script>
+    <script src="/components/footer.js" type="text/javascript" defer></script>    
+    <title>POS - Admin</title>
+</head>
+<body>
+    <header-component></header-component>
+    <div class=".bodyHeader">
+        <h1>POS - Settings</h1>
+    </div>
+    <main>
+        <!--START - FORM PRODUCT REGISTRATION-->
+        <form id="productForm">
+            <label for="productNameInput">Product:</label>            
+            <input id="productNameInput" name="productNameInput" type="text" placeholder="Type the product's name..." size="50" minlength="3" required >
+            
+            <label for="productPriceInput">Price:</label>            
+            <input id="productPriceInput" type="number" step="0.01" size="10" placeholder="0.00" required>
+            <button id="submitButton" type="submit">
+                Add
+            </button>            
+        </form>
+        <table id="productsBrowse">
+            <tr class="productHeader">
+                <th class="productIdHeader">Id</th>
+                <th class="productNameHeader">Product</th>
+                <th class="productPriceHeader">Price</th>
+                <th class="productActionsHeader">Actions</th>
+            </tr>            
+        </table>
+    </div>
+        <!--END - FORM PRODUCT REGISTRATION-->
+    </main>
+    <footer-component></footer-component>
+    <script src="/scripts.js"></script>
+</body>
+</html>

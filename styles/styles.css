@@ -1,0 +1,354 @@
+/*
+    TECH1101 - Web and Internet Fundamentals
+    Instructor: Michael Dorsey
+    Final Project
+    Student Name: Pedro Kuchak Molina
+    Student ID: 467777
+
+    GLOBAL STYLE and HOME STYLE
+
+    reference: Roboto https://fonts.google.com/selection/embed
+
+*/
+
+/*START - GENERAL*/
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 12px;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+:root {
+    /*colors*/
+    --backgroundPrimary: #fdfdfd;
+    --primaryColor: #050606;
+    --secondaryColor: #d8d7d5;
+    --thirdColor: #adb3bc;
+    --fourthColor: #f5f5f5;
+    --fifthColor: #2196F3;
+
+    /*fonts*/
+    --font: 'Roboto', sans-serif;
+    --font-size: 15px;
+
+}
+
+html,
+body {
+    background-color: var(--backgroundPrimary);
+    box-sizing: border-box;
+    font-family: var(--font);
+    color: var(--primaryColor);
+    margin: 0;
+}
+
+a {
+    color: var(--primaryColor);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--fifthColor);
+}
+/*END - GENERAL*/
+
+/*START - HEADER*/
+.header {
+    background-color: var(--fourthColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    font-size: 1em;
+    padding-top: 1vh;
+    height: 4vh;
+    width: 100%;    
+}
+
+.header * {
+    background-color: var(--fourthColor);
+}
+
+.logo {
+    text-align: center;  
+    margin-right: 20vmin;
+    width: 90%;  
+}
+
+.logo>span {
+    font-size: 1.2em;
+    font-style: bold;    
+}
+
+.bars {
+    display: none;
+}
+
+.logo>span {
+    margin: 0px;
+}
+
+.bars {
+    display: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    display: inline;
+    max-width: 5vmin;
+}
+
+.menuLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: left;
+    visibility: hidden;
+    min-height: 50px;
+    z-index: 1;
+    font-size: 13px;
+    padding: 10px;                
+    gap: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px var(--secondaryColor);
+    margin-top: 30px;
+    margin-left: -5vmin;
+}    
+/*END - HEADER*/
+
+/*START - FOOTER*/
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--backgroundPrimary);
+}
+
+.footerSocialMedias {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerSocialMedias>a {
+    background: none;
+    color: var(--secondaryColor);
+}
+
+.footerSocialMedias>a:hover {
+    color: var(--fifthColor);
+}
+
+.footerCopyright {
+    text-align: center;
+    font-size: small;
+    color: var(--secondaryColor);
+}
+/*END - FOOTER*/
+
+/*START - BODY*/
+
+.bodyHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 95%;
+    height: 5vmin;
+}
+
+.bodyHeader > * {
+    font-size: var(--font-size);
+}
+
+h1 {
+    background-color: var(--fifthColor);
+    padding: 10px;    
+    width: calc(100%-10px);
+    height: 100%;
+    color: white;   
+    margin-top: 0; 
+}
+
+body > main {
+    font-size: var(--font-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    padding: 10px 20px;
+    width: 80vmin;
+        
+    gap: 20px    
+};
+
+main > form {
+    width: 100%;
+}
+
+main > form > button:hover {
+    background-color: var(--fifthColor);
+    color: white;
+}
+
+#productPriceInput{
+    text-align: right;
+}
+
+
+main > table {
+    width: calc(100vw - 40px);    
+    padding: 10px;
+    border-radius: 5px;
+}
+
+tr {    
+    margin: 10px 20px;    
+    height: 50px;
+    box-shadow: 1px 1px 1px 1px var(--secondaryColor);     
+}
+
+tr:hover {
+    box-shadow: 1px 1px 1px 1px var(--fifthColor);     
+}
+
+tr:first-child {
+    box-shadow: 0px 2px 0px 0px var(--secondaryColor); 
+}
+
+th:first-child {
+    border-top-left-radius: 20px;    
+}
+
+th:last-child {
+    border-top-right-radius: 20px;
+}
+
+th {
+    text-align: left;
+    text-indent: 5px;
+    background-color: var(--fifthColor);
+    color: var(--backgroundPrimary);    
+}
+
+.productIdHeader {
+    width:5%;
+    text-align: center;
+}
+.productNameHeader {
+    width:50%;
+}
+
+.productPriceHeader {
+    width:25%;
+}
+
+.productActionsHeader {
+    width:20%;
+}
+
+.productIdItem {
+    text-align: center;
+}
+
+.productPriceItem {
+    text-align: right;
+}
+
+.productPriceItem > input {
+    text-align: right;
+    border: none;
+}
+
+.productActionsItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-top: 10px;
+}
+
+button {    
+    background-color: var(--fifthColor);
+    border-radius: 20px;
+    padding: 5px;
+    min-width: 60px;
+    border: none;
+    color: white;
+}
+
+button.saved {
+    background-color: #4CAF50; /* Green color after save */
+    position: relative;
+}
+
+button.saved::after {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+button.saved {
+    animation: pulse 0.3s ease-in-out;
+}
+
+
+button:hover {
+    box-shadow: 0px 5px 5px 5px var(--thirdColor);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.deleteButton {
+    background-color: red;    
+}
+
+.deleteButton.deleted {
+    background-color: red; /* Green color after save */
+    position: relative;
+}
+
+.deleteButton.deleted::after {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.deleteButton.deleted {
+    animation: pulse 0.3s ease-in-out;
+}
+
+
+button:hover {
+    box-shadow: 0px 5px 5px 5px var(--thirdColor);
+}
+
+input {
+    border-color: var(--fifthColor);
+    border-radius: 20px;
+    text-align: left;
+    padding: 5px;
+}
+
+
+
+/*END - BODY*/
