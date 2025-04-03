@@ -180,7 +180,7 @@ body > main {
     justify-content: left;
     align-items: left;
     padding: 10px 20px;
-    width: 80vmin;
+    
         
     gap: 20px    
 };
@@ -194,10 +194,16 @@ main > form > button:hover {
     color: white;
 }
 
-#productPriceInput{
+#productPriceInput, #productPriceUpdate{
     text-align: right;
 }
 
+#productSelect {
+    width: 50%;
+    border-radius: 20px;
+    text-align: left;
+    padding: 5px;
+}
 
 main > table {
     width: calc(100vw - 40px);    
@@ -205,26 +211,33 @@ main > table {
     border-radius: 5px;
 }
 
-tr {    
+main > table > tr {    
     margin: 10px 20px;    
     height: 50px;
     box-shadow: 1px 1px 1px 1px var(--secondaryColor);     
 }
 
-tr:hover {
+main > table> tr:hover {
     box-shadow: 1px 1px 1px 1px var(--fifthColor);     
 }
 
-tr:first-child {
+main > table> tr:first-child {
     box-shadow: 0px 2px 0px 0px var(--secondaryColor); 
 }
 
 th:first-child {
     border-top-left-radius: 20px;    
 }
-
 th:last-child {
-    border-top-right-radius: 20px;
+    border-top-right-radius: 20px;    
+}
+
+tr:last-child {
+    border-bottom-left-radius: 20px;    
+}
+
+tr:last-child {
+    border-bottom-right-radius: 20px;
 }
 
 th {
@@ -349,6 +362,11 @@ input {
     padding: 5px;
 }
 
-
+select {
+    border-color: var(--fifthColor);
+    border-radius: 20px;
+    text-align: left;
+    padding: 5px;
+}
 
 /*END - BODY*/
