@@ -2,6 +2,10 @@
 STYLES in styles.css
 */
 
+const baseUrl = window.location.origin.includes("github.io") 
+    ? "/POS/" 
+    : "/";
+
 class Header extends HTMLElement {
   constructor() {
     super();
@@ -18,8 +22,8 @@ class Header extends HTMLElement {
                 </div>                
             </div>
             <div id="menuLeft" class="menuLeft">
-              <span><a href="/index.html">Checkout</a></span>
-              <span><a href="/pages/admin.html">Settings</a></span>              
+              <span><a href="${baseUrl}index.html">Checkout</a></span>
+              <span><a href="${baseUrl}pages/admin.html">Settings</a></span>              
             </div>
             <div class="logo">
                 <span>Pos.</span>
