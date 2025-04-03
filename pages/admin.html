@@ -103,8 +103,7 @@
             // Create and load the script dynamically
             const script = document.createElement("script");
             script.src = basePath + "scripts/scripts.js";
-            script.type = "text/javascript";
-            script.defer = true; // Ensures it loads without blocking rendering
+            script.type = "text/javascript";            
             document.body.appendChild(script);
         })();
     </script>
