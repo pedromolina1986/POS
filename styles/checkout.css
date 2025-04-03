@@ -15,7 +15,7 @@ form {
     gap: 10px;
 }
 
-table {
+.keyboard table {
     width: 50%;
     text-align: center;    
 }
@@ -26,20 +26,20 @@ tr {
     
 }
 
-tr:first-child > td:first-child {  
+.keyboard tr:first-child > td:first-child {  
     border-top-left-radius: 20px;
 }
 
-tr:first-child > td:nth-child(3) {  
+.keyboard tr:first-child > td:nth-child(3) {  
     border-top-right-radius: 20px;
 }
 
 
-tr:last-child > td:first-child {  
+.keyboard tr:last-child > td:first-child {  
     border-bottom-left-radius: 20px;
 }
 
-tr:last-child > td:nth-child(3) {  
+.keyboard tr:last-child > td:nth-child(3) {  
     border-bottom-right-radius: 20px;
 }
 
@@ -48,10 +48,85 @@ td {
     margin: 50px;
 }
 
-td:hover {
+.keyboard td:hover {
     box-shadow: 1px 1px 1px 1px var(--secondaryColor);
 }
 
+.checkoutArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; 
+    width: 100%;
+    
+}
+
+.checkoutItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+    height: 50%;
+    border-radius: 10px;    
+    background-color: var(--fourthColor);   
+    padding: 10px; 
+}
+
+.checkoutItem > h2 {
+    width: 100%;
+    text-align: center;    
+}
+
+.checkoutItem > span {
+    width: 100%;
+    text-align: center;
+}
+
+.checkoutItem > span:last-child {
+    font-weight: bold;
+}
+
+.receiptArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+}
+
+.receiptArea table {
+    background-color: var(--fourthColor);
+    text-align: center;
+    border: 1px solid black;
+    width: 20%;
+}
+
+.receiptArea th {
+    background-color: var(--fourthColor);
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.receiptArea tr {    
+    border: 1px solid black;
+}
+
+.receiptArea td {    
+    border: 1px solid black;
+}
+
+.receiptArea th:first-child {    
+    border-radius: 0;
+}
+.receiptArea th:last-child {    
+    border-radius: 0;
+}
+
+.receiptArea tr:last-child {    
+    font-weight: bold;
+}
 
 
 
