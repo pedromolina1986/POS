@@ -113,8 +113,7 @@
             function loadScript(src) {
                 const script = document.createElement("script");
                 script.src = basePath + src;
-                script.type = "text/javascript";
-                script.defer = true; // Ensures scripts execute in order
+                script.type = "text/javascript";                
                 document.head.appendChild(script);
             }
     
