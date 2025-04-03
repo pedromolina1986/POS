@@ -93,6 +93,26 @@
         <!--END - FORM PRODUCT REGISTRATION-->
     </main>
     <footer-component></footer-component>
-    <script src="/scripts/scripts.js"></script>
+    <script>
+        (function() {
+            // Detect if running on GitHub Pages
+            const isGitHubPages = window.location.hostname.includes("github.io");
+                
+            const basePath = isGitHubPages ? "/POS/" : "/";
+    
+            // Function to dynamically load scripts
+            function loadScript(src) {
+                const script = document.createElement("script");
+                script.src = basePath + src;
+                script.type = "text/javascript";
+                script.defer = true; // Ensures scripts execute in order
+                document.head.appendChild(script);
+            }
+    
+            // Load header and footer scripts
+            loadScript("scripts/scripts.js");            
+
+        })();
+    </script>
 </body>
 </html>

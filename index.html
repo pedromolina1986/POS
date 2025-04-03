@@ -29,8 +29,7 @@
             // Append it to the document head
             document.head.appendChild(link);
         })();
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </script>    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -102,6 +101,27 @@
         
     </main>
     <footer-component></footer-component>  
-    <script src="scripts/scripts.js"></script>  
+    
+    <script>
+        (function() {
+            // Detect if running on GitHub Pages
+            const isGitHubPages = window.location.hostname.includes("github.io");
+                
+            const basePath = isGitHubPages ? "/POS/" : "/";
+    
+            // Function to dynamically load scripts
+            function loadScript(src) {
+                const script = document.createElement("script");
+                script.src = basePath + src;
+                script.type = "text/javascript";
+                script.defer = true; // Ensures scripts execute in order
+                document.head.appendChild(script);
+            }
+    
+            // Load header and footer scripts
+            loadScript("scripts/scripts.js");            
+
+        })();
+    </script>  
 </body>
 </html>
