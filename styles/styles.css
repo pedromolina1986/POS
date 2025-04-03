@@ -370,3 +370,26 @@ select {
 }
 
 /*END - BODY*/
+
+@media (max-width: 580px) {
+    form {
+        flex-direction: column;        
+    }
+
+    form * {
+        width: calc(100%-10px);
+        margin: 10px;
+    }
+    
+    .productPriceItem > input {
+        text-align: center;
+    }
+    
+    main > table {
+        width: 100%;
+    }
+
+    #productNameInput {
+        width: 80%;
+    }
+}

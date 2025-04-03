@@ -254,11 +254,11 @@ if (window.location.pathname == "/index.html"){
             let newCheckoutTitle = document.createElement("h2");
             newCheckoutTitle.textContent = item.name; 
             let newCheckoutPrice = document.createElement("span");
-            newCheckoutPrice.textContent = "$" + parseFloat(item.price).toFixed(2);;
+            newCheckoutPrice.textContent = myCurrency(item.price);
             let newCheckoutQty = document.createElement("span");
             newCheckoutQty.textContent = "x" + item.qty;
             let newCheckoutTotal = document.createElement("span");
-            newCheckoutTotal.textContent = "$"+parseFloat(item.price * item.qty).toFixed(2);
+            newCheckoutTotal.textContent = myCurrency(item.price * item.qty);
             newCheckout.appendChild(newCheckoutTitle);
             newCheckout.appendChild(newCheckoutPrice);
             newCheckout.appendChild(newCheckoutQty);
@@ -410,9 +410,9 @@ function printReceipt() {
         tdProductsTotal = document.createElement("td");
 
         tdProductsName.textContent = product.name;
-        tdProductsPrice.textContent = parseFloat(product.price).toFixed(2);
+        tdProductsPrice.textContent = myCurrency(product.price);
         tdProductsUnits.textContent = parseInt(product.qty);
-        tdProductsTotal.textContent = parseFloat(product.price*product.qty).toFixed(2);
+        tdProductsTotal.textContent = myCurrency(product.price*product.qty);
 
         subTotal += parseFloat(product.price*product.qty);
 
@@ -426,7 +426,7 @@ function printReceipt() {
 
     let trSubtotal = document.createElement("tr");
     let tdSubtotal = document.createElement("td");
-    tdSubtotal.textContent = "Total Price: " + parseFloat(subTotal).toFixed(2);
+    tdSubtotal.textContent = "Total Price: " + myCurrency(subTotal);
     tdSubtotal.colSpan = 4;
     trSubtotal.appendChild(tdSubtotal);
     table.appendChild(trSubtotal);
@@ -434,14 +434,14 @@ function printReceipt() {
     let trTaxes = document.createElement("tr");
     let tdTaxes = document.createElement("td");
     let taxes = parseFloat(subTotal*0.05).toFixed(2);
-    tdTaxes.textContent = "Taxes: " + parseFloat(subTotal*0.05).toFixed(2);
+    tdTaxes.textContent = "Taxes: " + myCurrency(subTotal*0.05);
     tdTaxes.colSpan = 4;
     trTaxes.appendChild(tdTaxes);
     table.appendChild(trTaxes);
 
     let trTotal = document.createElement("tr");
     let tdTotal = document.createElement("td");
-    tdTotal.textContent = "Amount Due: " + parseFloat(subTotal+taxes).toFixed(2);
+    tdTotal.textContent = "Amount Due: " + myCurrency(subTotal+taxes);
     tdTotal.colSpan = 4;
     trTotal.appendChild(tdTotal);
     table.appendChild(trTotal);
@@ -449,3 +449,14 @@ function printReceipt() {
     receiptArea.appendChild(table);
 }
 /*END - CHECKOUT*/
+
+/*HELPER*/
+function myCurrency(value) {
+    const formattedAmount = new Intl.NumberFormat('en-CA', {
+        style: 'currency',
+        currency: 'CAD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }).format(value);
+    return formattedAmount;
+}
