@@ -27,8 +27,29 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="/components/header.js" type="text/javascript" defer></script>
-    <script src="/components/footer.js" type="text/javascript" defer></script>    
+    <script>
+        (function() {
+            // Detect if running on GitHub Pages
+            const isGitHubPages = window.location.hostname.includes("github.io");
+                
+            const basePath = isGitHubPages ? "/POS/" : "/";
+    
+            // Function to dynamically load scripts
+            function loadScript(src) {
+                const script = document.createElement("script");
+                script.src = basePath + src;
+                script.type = "text/javascript";
+                script.defer = true; 
+                document.head.appendChild(script);
+            }
+    
+            // Load header and footer scripts
+            loadScript("components/header.js");
+            loadScript("components/footer.js");
+    
+        })();
+    </script>
+        
     <title>POS - Admin</title>
 </head>
 <body>
