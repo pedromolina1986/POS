@@ -18,8 +18,8 @@ class Header extends HTMLElement {
                 </div>                
             </div>
             <div id="menuLeft" class="menuLeft">
-              <span><a href="POS/index.html">Checkout</a></span>
-              <span><a href="POS/pages/admin.html">Settings</a></span>              
+              <span><a href="/index.html">Checkout</a></span>
+              <span><a href="/pages/admin.html">Settings</a></span>              
             </div>
             <div class="logo">
                 <span>Pos.</span>
