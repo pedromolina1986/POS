@@ -109,18 +109,13 @@
                 
             const basePath = isGitHubPages ? "/POS/" : "/";
     
-            // Function to dynamically load scripts
-            function loadScript(src) {
-                const script = document.createElement("script");
-                script.src = basePath + src;
-                script.type = "text/javascript";                
-                document.head.appendChild(script);
-            }
-    
-            // Load header and footer scripts
-            loadScript("scripts/scripts.js");            
-
+            // Create and load the script dynamically
+            const script = document.createElement("script");
+            script.src = basePath + "scripts/scripts.js";
+            script.type = "text/javascript";
+            script.defer = true; // Ensures it loads without blocking rendering
+            document.body.appendChild(script);
         })();
-    </script>  
+    </script> 
 </body>
 </html>
