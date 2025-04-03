@@ -106,15 +106,21 @@
         (function() {
             // Detect if running on GitHub Pages
             const isGitHubPages = window.location.hostname.includes("github.io");
-                
-            const basePath = isGitHubPages ? "/POS/" : "/";
-            
+    
+            // Automatically get the repository name from URL
+            const pathParts = window.location.pathname.split('/');
+            const repoName = pathParts[1] ? `/${pathParts[1]}/` : "/";
+    
+            // Set the correct base path
+            const basePath = isGitHubPages ? repoName : "/";
+            console.log("BASE", basePath);
             // Create and load the script dynamically
             const script = document.createElement("script");
             script.src = basePath + "scripts/scripts.js";
-            script.type = "text/javascript";            
+            script.type = "text/javascript";
+            script.defer = true;
             document.body.appendChild(script);
         })();
-    </script> 
+    </script>
 </body>
 </html>
