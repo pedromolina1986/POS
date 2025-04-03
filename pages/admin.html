@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/logos.css">
+    <script>
+        (function() {
+            // Detect if running on GitHub Pages
+            const isGitHubPages = window.location.hostname.includes("github.io");
+                
+            const basePath = isGitHubPages ? "/POS/" : "/";
+            console.log(basePath)
+            // Create a new link element
+            let link = document.createElement("link");
+            link.rel = "stylesheet";            
+            link.href = basePath + "styles/styles.css";
+            document.head.appendChild(link);
+            link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = basePath + "styles/logos.css";
+            document.head.appendChild(link);
+                            
+            
+            // Append it to the document head
+            document.head.appendChild(link);
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="/components/header.js" type="text/javascript" defer></script>
