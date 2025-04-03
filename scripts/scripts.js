@@ -64,7 +64,7 @@ if (window.location.pathname.indexOf("admin") > -1){
             let newPrice = document.getElementById("PRODUCTPRICE" + updatedItem.id);
             newPrice.value = parseFloat(updatedItem.price);
             saveProduct(updatedItem);
-            productPriceUpdate.value = 0;            
+            productPriceUpdate.value = "";            
         } else {
             alert("Please select a product!");
             productSelect.focus();
