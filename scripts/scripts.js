@@ -234,7 +234,7 @@ function keyboardPress(valuePressed) {
     unitInput.value = valuePressed;
 };
 
-if (window.location.pathname == "/index.html"){
+if (window.location.pathname.indexOf(index) > -1){
     checkoutForm.addEventListener('submit', function (event) {
         
         // Prevent the default action of sending the form data to the server
