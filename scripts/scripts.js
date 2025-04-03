@@ -1,9 +1,3 @@
-/*
-references: 
-Chatgpt:
--
-*/
-
 let productList = [];
 let checkout = [];
 if (!localStorage.getItem("productList")) {
@@ -101,7 +95,7 @@ function fillSelect() {
 
 function fillProductTable(items) {
     /*
-    HTML EXAMPLE
+    HTML
     <tr class="productItem">
         <td class="productIdItem">1</td>
         <td class="productNameItem">Milk</th>
@@ -274,7 +268,7 @@ if (window.location.pathname.indexOf("index") > -1){
 
             //update subtotal
             let payButton = document.getElementById("payButton");
-            payButton.innerText = "Pay - $" + subTotal();
+            payButton.innerText = "Pay - " + myCurrency(subTotal());
 
 
         } else {
@@ -288,7 +282,7 @@ function subTotal() {
     checkout.map(item => {
         total += item.price * item.qty;
     });
-    return parseFloat(total).toFixed(2);
+    return total;
 }
 
 function newTransction() {
@@ -379,7 +373,7 @@ function printReceipt() {
     const now = new Date();
     const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
     const currentTime = new Intl.DateTimeFormat('en-US', options).format(now);    
-    tdTime.textContent = "Date: " + currentTime;
+    tdTime.textContent = "Time: " + currentTime;
     tdTime.colSpan = 4;
     trTime.appendChild(tdTime);
     table.appendChild(trTime);    
@@ -439,7 +433,7 @@ function printReceipt() {
 
     let trTaxes = document.createElement("tr");
     let tdTaxes = document.createElement("td");
-    let taxes = parseFloat(subTotal*0.05).toFixed(2);
+    let taxes = subTotal*0.05;
     tdTaxes.textContent = "Taxes: " + myCurrency(subTotal*0.05);
     tdTaxes.colSpan = 4;
     trTaxes.appendChild(tdTaxes);
