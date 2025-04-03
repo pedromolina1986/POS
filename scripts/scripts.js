@@ -30,7 +30,7 @@ let checkoutForm = document.getElementById("checkoutForm");
 
 fillProductTable(productList);
 
-if (window.location.pathname == "/pages/admin.html"){
+if (window.location.pathname.indexOf("admin") > -1){
     productForm.addEventListener('submit', function (event) {
 
         // Prevent the default action of sending the form data to the server
@@ -166,7 +166,7 @@ function createItemnBrowse(item) {
     newItem.appendChild(price);
     newItem.appendChild(actions);
 
-    if (window.location.pathname == "/pages/admin.html"){
+    if (window.location.pathname.indexOf("admin") > -1){
         productsBrowse.appendChild(newItem);
     }    
 }
