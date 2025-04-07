@@ -194,7 +194,7 @@ function saveProduct(item) {
             button.textContent = "Save"; // Revert text back
         }, 2000);
     } /*NEW ITEM*/else {
-        let newItem = {
+        const newItem = {
             id: productList.length > 0 ? productList[productList.length - 1].id + 1 : 1,
             name: item.name,
             price: parseFloat(item.price)
