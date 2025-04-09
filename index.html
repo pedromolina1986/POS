@@ -3,60 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <script src="/linking.js" type="text/javascript"></script>
+    <script>stylesLinking(document, true)</script>        
+    <script>linkingScripts(document)</script>        
     <title>POS</title>
-    <script>
-        (function() {
-            // Detect if running on GitHub Pages            
-            const isGitHubPages = window.location.hostname.includes("github.io");
-                
-            const basePath = isGitHubPages ? "/POS/" : "/";
-            
-            // Create a new link element
-            let link = document.createElement("link");
-            link.rel = "stylesheet";
-            link.href = basePath + "styles/checkout.css";
-            document.head.appendChild(link);
-            link = document.createElement("link");
-            link.rel = "stylesheet";            
-            link.href = basePath + "styles/styles.css";
-            document.head.appendChild(link);
-            link = document.createElement("link");
-            link.rel = "stylesheet";
-            link.href = basePath + "styles/logos.css";
-            document.head.appendChild(link);
-                            
-            
-            // Append it to the document head
-            document.head.appendChild(link);
-        })();
-    </script>    
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script>
-        (function() {
-            // Detect if running on GitHub Pages
-            const isGitHubPages = window.location.hostname.includes("github.io");
-                
-            const basePath = isGitHubPages ? "/POS/" : "/";
-    
-            // Function to dynamically load scripts
-            function loadScript(src) {
-                const script = document.createElement("script");
-                script.src = basePath + src;
-                script.type = "text/javascript";
-                script.defer = true; // Ensures scripts execute in order
-                document.head.appendChild(script);
-            }
-    
-            // Load header and footer scripts
-            loadScript("components/header.js");
-            loadScript("components/footer.js");
-    
-        })();
-    </script>
-
-    
 </head>
 <body>
     <header-component></header-component>
@@ -100,26 +51,7 @@
         <div id="checkoutArea" class="checkoutArea"></div>
         
     </main>
-    <footer-component></footer-component>  
-    
-    <script>
-        (function() {
-            // Detect if running on GitHub Pages
-            const isGitHubPages = window.location.hostname.includes("github.io");
-    
-            // Automatically get the repository name from URL
-            const pathParts = window.location.pathname.split('/');
-            const repoName = pathParts[1] ? `/${pathParts[1]}/` : "/";
-    
-            // Set the correct base path
-            const basePath = isGitHubPages ? repoName : "/";
-            
-            // Create and load the script dynamically
-            const script = document.createElement("script");
-            script.src = basePath + "scripts/scripts.js";
-            script.type = "text/javascript";            
-            document.body.appendChild(script);
-        })();
-    </script>
+    <footer-component></footer-component>      
+    <script>dynamicScriptCall(document);</script>
 </body>
 </html>
