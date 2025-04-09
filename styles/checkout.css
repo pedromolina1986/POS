@@ -65,13 +65,14 @@ td {
 .checkoutItem {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 30%;
     height: 50%;
     border-radius: 10px;    
     background-color: var(--fourthColor);   
     padding: 10px; 
+    box-shadow: 1px 1px 1px 1px var(--secondaryColor);
 }
 
 .checkoutItem > h2 {
